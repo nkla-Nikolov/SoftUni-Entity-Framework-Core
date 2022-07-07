@@ -65,6 +65,11 @@ namespace ProductShop
         {
             var mapper = InitializeMapper();
 
+            //var options = new JsonSerializerSettings()
+            //{
+            //    NullValueHandling = NullValueHandling.Ignore
+            //};
+
             var categories = JsonConvert.DeserializeObject<ICollection<CategoryDTO>>(inputJson)
                 .Where(x => !string.IsNullOrEmpty(x.Name));
 
